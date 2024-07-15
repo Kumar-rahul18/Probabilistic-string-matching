@@ -7,7 +7,7 @@ We have \( n \) point objects in a one-dimensional, gravity-free universe. Each 
 - An initial position \( x_i \)
 - An initial velocity \( v_i \)
 
-The objects are numbered from left to right, so \( x_0 < x_1 < \ldots < x_{n-1} \).
+The objects are numbered from left to right, so \( x_0 < x_1 < . . . . < x_{n-1} \).
 
 ## Key Points:
 1. **Elastic Collisions**: When two objects collide, the collision is elastic, meaning both momentum and kinetic energy are conserved.
@@ -30,4 +30,4 @@ The objects are numbered from left to right, so \( x_0 < x_1 < \ldots < x_{n-1} 
 
 ## Requirements:
 1. **Data Structures**: The function should use appropriate data structures to efficiently compute and store collision events.
-2. **Time Complexity**: The function should run in \( O(n + m \log n) \) time.
+2. **Time Complexity**: The function should run in \( O(n + m log n) \) time.
