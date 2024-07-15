@@ -26,8 +26,4 @@ This project implements a pattern matching algorithm with time complexity O(m + 
 - **modPatternMatchWildcard(q, p, x)**:
   - Handles wildcard in pattern `p`.
 
-## Usage
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/pattern-matching-algorithm.git
-   cd pattern-matching-algorithm
+
