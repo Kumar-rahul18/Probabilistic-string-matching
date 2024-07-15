@@ -1,78 +1,33 @@
 # Probabilistic-string-matching
 
-Problem Summary:
-We have 
-𝑛
-n point objects in a one-dimensional, gravity-free universe. Each object has:
+# Problem Summary
 
-A mass 
-𝑚
-𝑖
-m 
-i
-​
- 
-An initial position 
-𝑥
-𝑖
-x 
-i
-​
- 
-An initial velocity 
-𝑣
-𝑖
-v 
-i
-​
- 
-The objects are numbered from left to right, so 
-𝑥
-0
-<
-𝑥
-1
-<
-…
-<
-𝑥
-𝑛
-−
-1
-x 
-0
-​
- <x 
-1
-​
- <…<x 
-n−1
-​
- .
+We have \( n \) point objects in a one-dimensional, gravity-free universe. Each object has:
+- A mass \( m_i \)
+- An initial position \( x_i \)
+- An initial velocity \( v_i \)
 
-Key Points:
-Elastic Collisions: When two objects collide, the collision is elastic, meaning both momentum and kinetic energy are conserved.
+The objects are numbered from left to right, so \( x_0 < x_1 < \ldots < x_{n-1} \).
 
-Collision Representation: A collision between objects 
-𝑖
-i and 
-𝑖
-+
-1
-i+1 is represented as a tuple 
-(
-𝑡
-,
-𝑖
-,
-𝑥
-)
-(t,i,x), where:
+## Key Points:
+1. **Elastic Collisions**: When two objects collide, the collision is elastic, meaning both momentum and kinetic energy are conserved.
+2. **Collision Representation**: A collision between objects \( i \) and \( i+1 \) is represented as a tuple \((t, i, x)\), where:
+   - \( t \) is the time of the collision.
+   - \( i \) is the index of the left object in the collision.
+   - \( x \) is the position at which the collision occurs.
 
-𝑡
-t is the time of the collision.
-𝑖
-i is the index of the left object in the collision.
-𝑥
-x is the position at which the collision occurs.
-Order of Collisions: Collisions need to be listed in chronological order. If multiple collisions happen at the same time, they are ordered from left to right (i.e., smaller index first).
+3. **Order of Collisions**: Collisions need to be listed in chronological order. If multiple collisions happen at the same time, they are ordered from left to right (i.e., smaller index first).
+
+## Inputs:
+- **M**: A list of masses for the objects.
+- **x**: A sorted list of initial positions for the objects.
+- **v**: A list of initial velocities for the objects.
+- **m**: A non-negative integer specifying the maximum number of collisions to record.
+- **T**: A non-negative float specifying the maximum time until which we need to record collisions.
+
+## Output:
+- A list of collision events (up to \( m \) events or until time \( T \) is reached), each represented as a tuple \((t, i, x)\).
+
+## Requirements:
+1. **Data Structures**: The function should use appropriate data structures to efficiently compute and store collision events.
+2. **Time Complexity**: The function should run in \( O(n + m \log n) \) time.
