@@ -1,33 +1,35 @@
 # Probabilistic-string-matching
 
-# Problem Summary
+# Pattern Matching Algorithm
 
-We have \( n \) point objects in a one-dimensional, gravity-free universe. Each object has:
-- A mass \( m_i \)
-- An initial position \( x_i \)
-- An initial velocity \( v_i \)
+## Overview
+This project implements a pattern matching algorithm with time complexity O(m + n) and space complexity O(log m + log n). The algorithm is designed to find all occurrences of a pattern `p` in a document `x` with minimal working memory and controlled false positives.
 
-The objects are numbered from left to right, so \( x_0 < x_1 < . . . . < x_{n-1} \).
+## Key Features
+- **Efficient Time Complexity**: Similar to the Knuth-Morris-Pratt algorithm.
+- **Reduced Space Complexity**: Uses O(log m + log n) working memory.
+- **Error Control**: Provides a mechanism to limit false positives with a probability `ε`.
 
-## Key Points:
-1. **Elastic Collisions**: When two objects collide, the collision is elastic, meaning both momentum and kinetic energy are conserved.
-2. **Collision Representation**: A collision between objects \( i \) and \( i+1 \) is represented as a tuple \((t, i, x)\), where:
-   - \( t \) is the time of the collision.
-   - \( i \) is the index of the left object in the collision.
-   - \( x \) is the position at which the collision occurs.
+## Algorithms Implemented
+1. **modPatternMatch(q, p, x)**:
+   - Finds occurrences of `p` in `x` using a prime number `q` to reduce space complexity.
+2. **randPatternMatch(ε, p, x)**:
+   - Chooses a random prime `q` to control false positives and uses `modPatternMatch`.
+3. **modPatternMatchWildcard(q, p, x)**:
+   - Handles patterns with a single wildcard character.
+4. **randPatternMatchWildcard(ε, p, x)**:
+   - Uses a random prime `q` and handles patterns with a wildcard.
 
-3. **Order of Collisions**: Collisions need to be listed in chronological order. If multiple collisions happen at the same time, they are ordered from left to right (i.e., smaller index first).
+## Functions to Implement
+- **findN(eps, m)**:
+  - Computes an appropriate value for `N` based on pattern length `m` and error probability `ε`.
+- **modPatternMatch(q, p, x)**:
+  - Finds occurrences of `p` in `x` modulo `q`.
+- **modPatternMatchWildcard(q, p, x)**:
+  - Handles wildcard in pattern `p`.
 
-## Inputs:
-- **M**: A list of masses for the objects.
-- **x**: A sorted list of initial positions for the objects.
-- **v**: A list of initial velocities for the objects.
-- **m**: A non-negative integer specifying the maximum number of collisions to record.
-- **T**: A non-negative float specifying the maximum time until which we need to record collisions.
-
-## Output:
-- A list of collision events (up to \( m \) events or until time \( T \) is reached), each represented as a tuple \((t, i, x)\).
-
-## Requirements:
-1. **Data Structures**: The function should use appropriate data structures to efficiently compute and store collision events.
-2. **Time Complexity**: The function should run in \( O(n + m log n) \) time.
+## Usage
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/pattern-matching-algorithm.git
+   cd pattern-matching-algorithm
