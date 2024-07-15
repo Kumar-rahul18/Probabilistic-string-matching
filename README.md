@@ -1,7 +1,5 @@
 # Probabilistic-string-matching
 
-# Pattern Matching Algorithm
-
 ## Overview
 This project implements a pattern matching algorithm with time complexity O(m + n) and space complexity O(log m + log n). The algorithm is designed to find all occurrences of a pattern `p` in a document `x` with minimal working memory and controlled false positives.
 
